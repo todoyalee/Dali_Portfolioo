@@ -19,6 +19,18 @@ export default {
           foreground: "#000",
         },
       },
+      fontFamily: {
+    sans: ['"Google Sans Code"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+  },
+    keyframes: {
+    glow: {
+      '0%, 100%': { textShadow: '0 0 0px #fff' },
+      '50%': { textShadow: '0 0 16px #fff, 0 0 32px #f87171' },
+    },
+  },
+  animation: {
+    glow: 'glow 1.5s ease-in-out infinite',
+  },
     },
   },
   plugins: [],

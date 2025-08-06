@@ -3,11 +3,12 @@ import { motion } from 'framer-motion';
 import { Button } from './ui/button';
 import {
   User,
-  Code2,
+  Terminal,
   BrainCircuit,
   Mail,
   Menu,
   X,
+  House
 } from 'lucide-react';
 
 const Navbar = () => {
@@ -28,10 +29,10 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { href: "#hero", label: "Home", icon: User },
+    { href: "#hero", label: "Home", icon: House },
     { href: "#technologies", label: "Skills", icon: BrainCircuit },
     { href: "#about", label: "About Me", icon: User },
-    { href: "#projects", label: "Projects", icon: Code2 },
+    { href: "#projects", label: "Projects", icon: Terminal },
     
   ];
 

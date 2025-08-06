@@ -13,6 +13,8 @@ export const VortexBackground = () => {
         rangeSpeed={1.3}
         baseRadius={1.5}
         rangeRadius={1.7}
+        containerClassName="opacity-50"
+
       />
     </div>
   );
