@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from './ui/button';
 import {
-  User,
+  BriefcaseBusiness,
   Terminal,
   BrainCircuit,
   Mail,
@@ -30,8 +30,8 @@ const Navbar = () => {
 
   const navItems = [
     { href: "#hero", label: "Home", icon: House },
+    { href: "#experience", label: "Experience", icon: BriefcaseBusiness },
     { href: "#technologies", label: "Skills", icon: BrainCircuit },
-    { href: "#about", label: "About Me", icon: User },
     { href: "#projects", label: "Projects", icon: Terminal },
     
   ];
