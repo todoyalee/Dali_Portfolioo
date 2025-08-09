@@ -29,9 +29,9 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { href: "#hero", label: "Home", icon: House },
+    { href: "#home", label: "Home", icon: House },
     { href: "#experience", label: "Experience", icon: BriefcaseBusiness },
-    { href: "#technologies", label: "Skills", icon: BrainCircuit },
+    { href: "#skills", label: "Skills", icon: BrainCircuit },
     { href: "#projects", label: "Projects", icon: Terminal },
     
   ];
@@ -67,7 +67,7 @@ const Navbar = () => {
               className="px-8 py-2 rounded-full bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400 hover:from-red-600 hover:via-orange-400 hover:to-yellow-400 text-white focus:ring-2 focus:ring-red-600 hover:shadow-xl transition duration-200 hover:text-white"
               asChild
             >
-              <a href="#contact">
+              <a href="mailto:aeijthabet01@gmail.com">
                 <span className="relative flex items-center">
                   <Mail className="w-4 h-4 mr-2" />
                   Contact

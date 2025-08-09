@@ -1,8 +1,10 @@
 import './App.css'
-import About from './components/Experience'
+import Experience from './components/Experience'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import { VortexBackground } from './components/VortexBackground'
+import Skills from './components/Skills'
+import Projects from './components/Projects'
 
 function App() {
   
@@ -12,7 +14,9 @@ function App() {
       <div className="relative z-10 items-center justify-center">
             <Navbar/>
             <Home />
-            <About />
+            <Experience />
+            <Skills />
+            <Projects></Projects>
         </div>
     </>
   )
