@@ -5,6 +5,7 @@ import Home from './components/Home'
 import { VortexBackground } from './components/VortexBackground'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
+import Chatbot from './components/Chatbot'
 
 function App() {
   
@@ -16,8 +17,9 @@ function App() {
             <Home />
             <Experience />
             <Skills />
-            <Projects></Projects>
+            <Projects />
         </div>
+        <Chatbot />
     </>
   )
 }
