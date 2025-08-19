@@ -4,13 +4,15 @@ import projet_ml from '../assets/projects/projet_ml.png';
 import projet_ppp from '../assets/projects/projet_ppp.png';
 import spotify_big_data from '../assets/projects/spotify_big_data.png';
 import yummy from '../assets/projects/yummy.png';
+import chatbot from '../assets/projects/chatbot.png';
+
 
 const projectsData: Project[] = [
   {
     id: 1,
     title: "My Portfolio's chatbot",
     description: "Developped a chatbot for my portfolio to facilitate the interaction with visitors. The chatbot is capable of answering questions about my skills, projects, and experience. It was built using RAG techniques with Langchain",
-    image: projetPfa,
+    image: chatbot,
     tags: [ "Python","Langchain","Hugging Face", "RAG"],
     githubUrl: "https://github.com/rozee01/AI_Visual_Analytics"
   },

@@ -8,7 +8,8 @@ import {
   Mail,
   Menu,
   X,
-  House
+  House,
+  Trophy
 } from 'lucide-react';
 
 const Navbar = () => {
@@ -33,7 +34,7 @@ const Navbar = () => {
     { href: "#experience", label: "Experience", icon: BriefcaseBusiness },
     { href: "#skills", label: "Skills", icon: BrainCircuit },
     { href: "#projects", label: "Projects", icon: Terminal },
-    
+    { href: "#achievements", label: "Achievements", icon: Trophy }
   ];
 
   return (

@@ -1,7 +1,7 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect ,forwardRef} from "react";
 import { SendHorizontal, CircleX } from "lucide-react";
 
-const Chatbot = () => {
+const Chatbot = forwardRef<HTMLDivElement>((props, ref) => {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<
     { from: "user" | "bot"; text: string }[]
@@ -43,17 +43,17 @@ const Chatbot = () => {
   }, [messages]);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div ref={ref} className="fixed bottom-6 right-6 z-50">
       {open ? (
         <div className="w-80 h-[500px] bg-white rounded-xl shadow-lg flex flex-col overflow-hidden border border-gray-200">
-          <div className="bg-red-600 text-white px-4 py-2 flex justify-between items-center">
+          <div className="bg-orange-500 text-black px-4 py-2 flex justify-between items-center">
             <span className="font-semibold">Arij's Assistant</span>
             <button
               onClick={() => {
                 setOpen(false);
                 setThreadId(null);
               }}
-              className="text-white"
+              className="text-black"
             >
               <CircleX />
             </button>
@@ -67,7 +67,7 @@ const Chatbot = () => {
                 key={i}
                 className={`text-sm px-3 py-2 rounded-2xl max-w-[80%] ${
                   msg.from === "user"
-                    ? "bg-red-500 text-white ml-auto"
+                    ? "bg-orange-500 text-black ml-auto"
                     : "bg-gray-200 text-gray-800"
                 }`}
               >
@@ -85,7 +85,7 @@ const Chatbot = () => {
               placeholder="Type a message..."
             />
             <button
-              className="bg-red-600 text-white px-4 rounded-r"
+              className="bg-orange-500 text-black px-4 rounded-r"
               onClick={handleSend}
             >
               <SendHorizontal size={20} />
@@ -94,7 +94,7 @@ const Chatbot = () => {
         </div>
       ) : (
         <button
-          className="bg-red-600 text-white rounded-full w-14 h-14 shadow-lg flex items-center justify-center text-2xl"
+          className="bg-red-600 text-black rounded-full w-14 h-14 shadow-lg flex items-center justify-center text-2xl"
           onClick={() => {
             setOpen(true);
             if (!threadId) {
@@ -111,6 +111,6 @@ const Chatbot = () => {
       )}
     </div>
   );
-};
-
+});
+Chatbot.displayName = "Chatbot";
 export default Chatbot;
