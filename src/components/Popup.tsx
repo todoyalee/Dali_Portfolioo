@@ -15,7 +15,7 @@ const Popup: React.FC<PopupProps> = ({ message, show, onClose, children, chatbot
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 z-[120] flex items-center justify-center pointer-events-none">
+    <div className="fixed inset-0 z-[120] font-sans flex items-center justify-center pointer-events-none">
       {/* Four overlay strips around the chatbot hole (only render when we have a rect) */}
       {chatbotRect && (
         <>
@@ -63,15 +63,15 @@ const Popup: React.FC<PopupProps> = ({ message, show, onClose, children, chatbot
       )}
 
       {/* Centered Card popup (interactive) */}
-      <Card className="relative z-[130] max-w-xl w-full p-8 text-center pointer-events-auto">
+            <Card className="relative z-[130] max-w-xl w-full mx-10 p-4 sm:p-8 text-center pointer-events-auto">
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 text-gray-500 hover:text-black transition"
+          className="absolute top-2 right-2 sm:top-3 sm:right-3 text-gray-500 hover:text-black transition"
           aria-label="Close popup"
         >
           ✕
         </button>
-        <p className="text-2xl font-bold mb-6">{message}</p>
+        <p className="text-lg sm:text-2xl font-bold mb-4 sm:mb-6">{message}</p>
         {children}
       </Card>
     </div>

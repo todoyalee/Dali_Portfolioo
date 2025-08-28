@@ -73,7 +73,7 @@ const Skills = () => {
 
   return (
     <section id="skills" className="section-container text-center mb-16 mt-16">
-        <h2 className="text-4xl font-sans font-medium mb-9 text-white">
+        <h2 className="lg:text-4xl text-3xl font-sans font-medium mb-9 text-white">
           Technologies I Work With
         </h2>
         <p className="text-xl text-gray-400 max-w-2xl mx-auto">

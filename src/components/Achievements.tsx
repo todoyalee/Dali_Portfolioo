@@ -40,9 +40,9 @@ const Achievements = () => (
       {achievementsData.map((achievement, idx) => (
         <div
           key={idx}
-          className="bg-black/60 border border-yellow-500 rounded-xl p-6 flex flex-row items-center shadow-lg hover:shadow-yellow-400/30 transition-shadow duration-300"
+          className="bg-black/60 border border-yellow-500 rounded-xl p-6 flex md:flex-row flex-col items-center shadow-lg hover:shadow-yellow-400/30 transition-shadow duration-300"
         >
-          <div className="flex-shrink-0 w-80 h-30 rounded-lg overflow-hidden bg-gray-800 mr-6 flex items-center justify-center">
+          <div className="flex-shrink-0 lg:w-80 lg:h-30 w-50 h-30 rounded-lg overflow-hidden bg-gray-800 mr-6 flex items-center justify-center">
             {achievement.image ? (
               <img
                 src={achievement.image}
@@ -55,7 +55,7 @@ const Achievements = () => (
             )}
           </div>
           <div className="flex flex-col">
-            <h3 className="text-xl font-bold text-yellow-400 mb-2">
+            <h3 className="text-xl font-bold text-yellow-400 mb-2 mt-2">
               {achievement.title}
             </h3>
             <span className="text-xs text-gray-400 mb-2">

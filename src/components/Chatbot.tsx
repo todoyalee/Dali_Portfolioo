@@ -43,56 +43,72 @@ const Chatbot = forwardRef<HTMLDivElement>((props, ref) => {
   }, [messages]);
 
   return (
-    <div ref={ref} className="fixed bottom-6 right-6 z-50">
-      {open ? (
-        <div className="w-80 h-[500px] bg-white rounded-xl shadow-lg flex flex-col overflow-hidden border border-gray-200">
-          <div className="bg-orange-500 text-black px-4 py-2 flex justify-between items-center">
-            <span className="font-semibold">Arij's Assistant</span>
-            <button
-              onClick={() => {
-                setOpen(false);
-                setThreadId(null);
-              }}
-              className="text-black"
-            >
-              <CircleX />
-            </button>
-          </div>
-          <div
-            className="flex-1 p-4 space-y-2 overflow-y-auto bg-gray-50"
-            style={{ minHeight: 0 }}
+  <div ref={ref} className="fixed bottom-2 right-2 sm:bottom-6 sm:right-6 z-50">
+    {open ? (
+      <div className="w-80 h-[500px] bg-white rounded-xl shadow-lg flex flex-col overflow-hidden border border-gray-200">
+        <div className="bg-orange-500 text-black px-4 py-2 flex justify-between items-center">
+          <span className="font-semibold">Arij's Assistant</span>
+          <button
+            onClick={() => {
+              setOpen(false);
+              setThreadId(null);
+            }}
+            className="text-black"
           >
-            {messages.map((msg, i) => (
-              <div
-                key={i}
-                className={`text-sm px-3 py-2 rounded-2xl max-w-[80%] ${
-                  msg.from === "user"
-                    ? "bg-orange-500 text-black ml-auto"
-                    : "bg-gray-200 text-gray-800"
-                }`}
-              >
-                {msg.text}
-              </div>
-            ))}
-            <div ref={messagesEndRef} />
-          </div>
-          <div className="flex border-t p-2 bg-white text-black">
-            <input
-              className="flex-1 px-2 py-1 border rounded-l focus:outline-none"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && handleSend()}
-              placeholder="Type a message..."
-            />
-            <button
-              className="bg-orange-500 text-black px-4 rounded-r"
-              onClick={handleSend}
-            >
-              <SendHorizontal size={20} />
-            </button>
-          </div>
+            <CircleX />
+          </button>
         </div>
-      ) : (
+        <div
+          className="flex-1 p-4 space-y-2 overflow-y-auto bg-gray-50"
+          style={{ minHeight: 0 }}
+        >
+          {messages.map((msg, i) => (
+            <div
+              key={i}
+              className={`text-sm px-3 py-2 rounded-2xl max-w-[80%] ${
+                msg.from === "user"
+                  ? "bg-orange-500 text-black ml-auto"
+                  : "bg-gray-200 text-gray-800"
+              }`}
+            >
+              {msg.text}
+            </div>
+          ))}
+          <div ref={messagesEndRef} />
+        </div>
+        <div className="flex border-t p-2 bg-white text-black">
+          <input
+            className="flex-1 px-2 py-1 border rounded-l focus:outline-none"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && handleSend()}
+            placeholder="Type a message..."
+          />
+          <button
+            className="bg-orange-500 text-black px-4 rounded-r"
+            onClick={handleSend}
+          >
+            <SendHorizontal size={20} />
+          </button>
+        </div>
+      </div>
+    ) : (
+      <div className="relative flex flex-col items-center z-[200] pointer-events-auto">
+        {/* Floating text + arrow */}
+        <div className="absolute bottom-16 flex flex-col items-center animate-bounce">
+          <span className="text-white font-semibold text-sm">Open me</span>
+          <svg
+            className="w-5 h-5 text-white mt-1"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+
+        {/* Chat open button */}
         <button
           className="bg-red-600 text-black rounded-full w-14 h-14 shadow-lg flex items-center justify-center text-2xl"
           onClick={() => {
@@ -108,9 +124,11 @@ const Chatbot = forwardRef<HTMLDivElement>((props, ref) => {
         >
           💬
         </button>
-      )}
-    </div>
-  );
+      </div>
+    )}
+  </div>
+);
+
 });
 Chatbot.displayName = "Chatbot";
 export default Chatbot;

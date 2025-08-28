@@ -61,16 +61,15 @@ const projectsData: Project[] = [
 const Projects = () => {
   return (
     <section id="projects" className="section-container relative">
-      <h2 className="section-title mb-8 mt-16 text-white text-4xl font-sans font-medium">Projects</h2>
+      <h2 className="section-title mb-8 mt-16 text-white lg:text-4xl text-3xl font-sans font-medium">Projects</h2>
     
         <p className="text-lg text-gray-300 leading-relaxed mb-12">
           Explore my collection of innovative projects that showcase my expertise in AI, web development, and software engineering. 
-          Each project represents a unique solution to real-world challenges, combining cutting-edge technologies with practical applications.
           The projects below are the most recent projects I worked on, other projects can be found on my GitHub profile.
         </p>
       
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 sm:grid-cols-1 gap-14 px-14">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 sm:grid-cols-1 gap-14 md:px-14 px-3">
         {projectsData.map((project, index) => (
           <ProjectCard key={project.id} project={project} index={index} />
         ))}

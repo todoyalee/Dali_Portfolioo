@@ -12,47 +12,49 @@ const workData: TimelineItem[] = [
     id: 1,
     year: "July 2025 – August 2025",
     title: "Data Engineering Intern – Carbon Insights",
-    description: `Built and optimized time series models to forecast carbon emissions across European industries for ETS compliance. Designed and implemented ETL data pipelines to process large-scale emissions datasets. Automated data workflows using AWS Lambda and managed storage with AWS S3. Contributed to improving the accuracy and scalability of the company’s emissions forecasting platform.`,
+    description: `Built and optimized time series models to forecast carbon emissions across European industries for ETS compliance. Designed and implemented ETL data pipelines to process lreal-time data. Automated data workflows using AWS Lambda and managed storage with AWS S3.`,
   },
   {
     id: 2,
     year: "September 2024 – June 2025",
     title: "Part-time AI/ML Developer – Welyne",
-    description: `Developed a machine learning model to predict body measurements from basic user inputs (height, weight, age, sex) for the Weefizz platform. Built time series forecasting tools to anticipate wholesale clothing orders based on historical trends. Designed a matchmaking algorithm for WeHive to improve pairing between au pairs and families. Integrated ML solutions within Laravel, WordPress, and Python-based environments to support production deployment.`,
+    description: `Developed a machine learning model to predict body measurements from basic user inputs (height, weight, age, sex) for the Weefizz platform. Built time series forecasting tools to anticipate wholesale clothing orders based on historical trends. Designed a matchmaking algorithm for WeHive to improve pairing between au pairs and families.`,
   },
   {
     id: 3,
     year: "July 2024 – August 2024",
     title: "Web Development Intern – Welyne",
-    description: `Created a backend tool to benchmark and analyze API performance under various workloads. Built and tested RESTful APIs using Laravel and Flask. Automated performance reporting, including metrics like latency, throughput, and error rates. Helped improve internal API stability and response time through iterative optimization.`,
+    description: `Created a backend tool to benchmark and analyze API performance under various workloads. Automated performance reporting, including metrics like latency, throughput, and error rates. Helped improve internal API stability and response time through iterative optimization.`,
   },
   {
     id: 4,
     year: "February 2024 – May 2024",
     title: "Part-time Web Developer – Devnet",
-    description: `Contributed to the development and maintenance of EDUMS, a web application for educational management. Implemented new features and improved UI components using HTML, CSS, JavaScript, and Laravel. Handled backend development tasks including database operations with MySQL. Collaborated with a cross-functional team to deliver stable, user-friendly features in an agile workflow.`,
+    description: `Contributed to the development and maintenance of EDUMS, a web application for educational management. Implemented new features and improved UI components using HTML, CSS, JavaScript, and Laravel. Handled backend development tasks including database operations with MySQL.`,
   },
 ];
 
 const Experience = () => {
   return (
-    <section id="experience" className="section-container text-white mb-10">
-      <h2 className="section-title text-4xl font-sans font-medium mb-9">
+    <section
+      id="experience"
+      className="section-container text-white mb-10 lg:max-w-5xl max-w-xl"
+    >
+      <h2 className="section-title lg:text-4xl text-3xl font-sans font-medium mb-9">
         Professional Experience
       </h2>
 
       <div className="w-full">
-        <div className="w-full max-w-5xl mx-auto">
+        <div className="w-full lg:max-w-5xl mx-auto">
           <div className="relative">
-            <div className="absolute left-6 top-5 bottom-5 w-1 bg-gradient-to-b from-red-600 to-yellow-400 shadow-lg rounded-full"></div>
-
-            <div className="space-y-16">
+            <div className="absolute left-4 sm:left-6 top-5 bottom-5 w-1 sm:w-1 bg-gradient-to-b from-red-600 to-yellow-400 shadow-lg rounded-full"></div>
+            <div className="md:space-y-16 space-y-10">
               {workData.map((item, idx) => (
                 <div
                   key={item.id}
                   className="relative pl-16 flex items-start group"
                 >
-                  <div className="absolute left-0 top-1 w-12 h-12 bg-gradient-to-r from-red-600 to-yellow-400 flex items-center justify-center rounded-full border-4 border-background z-10 shadow-lg group-hover:scale-110 transition">
+                  <div className="absolute left-0 top-1 w-9 h-9 md:w-12 md:h-12 bg-gradient-to-r from-red-600 to-yellow-400 flex items-center justify-center rounded-full border-4 border-background z-10 shadow-lg group-hover:scale-110 transition">
                     <WorkIcon />
                   </div>
                   <Card className="glass-card rounded-xl border-muted shadow-xl group-hover:border-red-500 transition-all w-full">
@@ -63,9 +65,17 @@ const Experience = () => {
                       <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-red-600 to-yellow-400 text-transparent bg-clip-text">
                         {item.title}
                       </h3>
-                      <p className="text-muted-foreground whitespace-pre-line">
-                        {item.description}
-                      </p>
+                      <ul className="list-disc pl-5 text-muted-foreground text-sm md:text-lg text-left space-y-2">
+                        {item.description
+                          .split(". ")
+                          .filter(Boolean)
+                          .map((point, i) => (
+                            <li key={i}>
+                              {point.trim()}
+                              {point.endsWith(".") ? "" : "."}
+                            </li>
+                          ))}
+                      </ul>
                     </CardContent>
                   </Card>
                 </div>
@@ -80,7 +90,7 @@ const Experience = () => {
 
 const WorkIcon = () => (
   <svg
-    className="w-5 h-5 text-white"
+    className="w-3 h-3 sm:w-5 sm:h-5 text-white"
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
