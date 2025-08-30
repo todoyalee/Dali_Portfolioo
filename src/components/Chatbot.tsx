@@ -49,7 +49,7 @@ const Chatbot = forwardRef<HTMLDivElement>((props, ref) => {
   }, [messages]);
 
   return (
-  <div ref={ref} className="fixed bottom-2 right-2 sm:bottom-6 sm:right-6 z-50">
+  <div ref={ref}   className={`fixed bottom-2 right-2 sm:bottom-6 sm:right-6 ${open ? "z-[200]" : "z-50"}`}>
     {open ? (
       <div className="w-80 h-[500px] bg-white rounded-xl shadow-lg flex flex-col overflow-hidden border border-gray-200">
         <div className="bg-orange-500 text-black px-4 py-2 flex justify-between items-center">
