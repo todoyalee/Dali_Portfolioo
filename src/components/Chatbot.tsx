@@ -1,25 +1,30 @@
+/// <reference types="vite/client" />
 import { useState, useRef, useEffect ,forwardRef} from "react";
 import { SendHorizontal, CircleX } from "lucide-react";
 
 const Chatbot = forwardRef<HTMLDivElement>((props, ref) => {
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState<
     { from: "user" | "bot"; text: string }[]
   >([]);
   const [input, setInput] = useState("");
   const [threadId, setThreadId] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
-  const handleSend = async () => {
+    const handleSend = async () => {
     if (!input.trim()) return;
     const userMessage = input;
     setMessages([...messages, { from: "user", text: userMessage }]);
     setInput("");
-
+    setLoading(true); // Start loading
+  
     try {
-      const response = await fetch("http://127.0.0.1:5000/chat", {
+      const apiUrl = import.meta.env.VITE_API_URL;
+
+      const response = await fetch(apiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({"thread_id":threadId ,"question":userMessage}),
+        body: JSON.stringify({ thread_id: threadId, question: userMessage }),
       });
       const data = await response.text();
       setMessages((msgs) => [
@@ -35,6 +40,7 @@ const Chatbot = forwardRef<HTMLDivElement>((props, ref) => {
         },
       ]);
     }
+    setLoading(false); // End loading
   };
 
   // Auto-scroll to bottom when messages change
@@ -58,7 +64,7 @@ const Chatbot = forwardRef<HTMLDivElement>((props, ref) => {
             <CircleX />
           </button>
         </div>
-        <div
+                <div
           className="flex-1 p-4 space-y-2 overflow-y-auto bg-gray-50"
           style={{ minHeight: 0 }}
         >
@@ -74,6 +80,13 @@ const Chatbot = forwardRef<HTMLDivElement>((props, ref) => {
               {msg.text}
             </div>
           ))}
+          {loading && (
+            <div className="flex items-center gap-1 px-3 py-2 rounded-2xl bg-gray-200 text-gray-800 max-w-[60%]">
+              <span className="animate-bounce">.</span>
+              <span className="animate-bounce delay-150">.</span>
+              <span className="animate-bounce delay-300">.</span>
+            </div>
+          )}
           <div ref={messagesEndRef} />
         </div>
         <div className="flex border-t p-2 bg-white text-black">

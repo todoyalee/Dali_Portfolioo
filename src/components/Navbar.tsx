@@ -94,7 +94,7 @@ const Navbar = () => {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <motion.div 
-          className="md:hidden p-4 bg-gray-900/95 border-t border-gray-800 backdrop-blur-md"
+          className="md:hidden p-4 bg-black border-t border-yellow-200 backdrop-blur-md"
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
@@ -134,7 +134,7 @@ const IslandNavLink = ({
       className="relative px-3 py-2 text-gray-300 hover:text-white transition-all duration-300 group flex items-center"
     >
       <span className="relative z-10 flex items-center">{children}</span>
-      <span className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-blue-500/20 group-hover:via-orange-500/20 group-hover:to-yellow-500/20 opacity-0 group-hover:opacity-100 rounded-full blur-sm transition-all duration-300"></span>
+      <span className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-purple-500/0 to-pink-500/0 group-hover:from-black-500/20 group-hover:via-orange-500/20 group-hover:to-yellow-500/20 opacity-0 group-hover:opacity-100 rounded-full blur-sm transition-all duration-300"></span>
       <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400 group-hover:w-full group-hover:left-0 transition-all duration-300"></span>
     </a>
   );
