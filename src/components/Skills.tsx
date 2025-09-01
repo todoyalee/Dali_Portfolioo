@@ -45,8 +45,9 @@ const techGroups = [
   {
     label: 'DevOps',
     items: [
-      { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'},
+      { name: 'GCP', icon: 'https://img.icons8.com/?size=100&id=WHRLQdbEXQ16&format=png&color=000000'},
       { name: 'AWS', icon: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg'},
+      { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'},
       { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg'},
       { name: 'Kafka', icon: 'https://upload.wikimedia.org/wikipedia/commons/0/01/Apache_Kafka_logo.svg'},
     ],
