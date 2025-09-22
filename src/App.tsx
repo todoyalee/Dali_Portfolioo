@@ -14,7 +14,6 @@ function App() {
   const [showPopup, setShowPopup] = useState(false);
   const chatbotRef = useRef<HTMLDivElement | null>(null);
   const [chatbotRect, setChatbotRect] = useState<DOMRect | null>(null);
-  const projectsRef = useRef<HTMLDivElement | null>(null);
 
   useLayoutEffect(() => {
     const updateRect = () => {
@@ -41,24 +40,7 @@ function App() {
     const timer = setTimeout(() => setShowPopup(true), 1500); // show after 1 second
     return () => clearTimeout(timer);
   }, []);
-  useEffect(() => {
-    const observer = new window.IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShowPopup(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-    if (projectsRef.current) {
-      observer.observe(projectsRef.current);
-    }
-    return () => {
-      if (projectsRef.current) {
-        observer.unobserve(projectsRef.current);
-      }
-    };
-  }, []);
+
   
   return (
     <>
@@ -69,9 +51,7 @@ function App() {
             <Home />
             <Experience />
             <Skills />
-            <div ref={projectsRef}>
-              <Projects />
-            </div>
+            <Projects />
             <Achievements />
         </div>
         </div>
