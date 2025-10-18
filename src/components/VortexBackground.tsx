@@ -1,4 +1,4 @@
-import { Vortex } from "./Vortex";
+import { Vortex } from "./Vortex.js";
 
 export const VortexBackground = () => {
   return (

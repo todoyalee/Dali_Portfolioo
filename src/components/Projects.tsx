@@ -1,10 +1,10 @@
-import ProjectCard, { Project } from './ProjectCard';
+import ProjectCard, { type Project } from './ProjectCard.js';
 import projetPfa from '../assets/projects/projet_pfa.png';
 import projet_ml from '../assets/projects/projet_ml.png';
 import projet_ppp from '../assets/projects/projet_ppp.png';
 import spotify_big_data from '../assets/projects/spotify_big_data.png';
 import yummy from '../assets/projects/yummy.png';
-import chatbot from '../assets/projects/chatbot.png';
+import chatbot from '../assets/projects/por.png';
 
 
 const projectsData: Project[] = [

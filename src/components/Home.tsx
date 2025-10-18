@@ -21,10 +21,10 @@ export default function Home() {
       className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 lg:max-w-5xl max-w-xl mx-auto"
     >
       <h1 className="text-white font-bold font-sans text-4xl sm:text-6xl mb-6 sm:mb-4">
-        Hello, I'm Arij 👋
+        Hello, I'm Mohamed Ali 👋
       </h1>
       <h2 className="font-sans text-white font-medium tracking-wider text-lg sm:text-2xl animate-glow  mb-6 sm:mb-4">
-        Software Engineering student at INSAT - Tunisia and AI enthusiast
+        Software Engineering student at Esprit - Tunisia and AI enthusiast
       </h2>
       <h3 className="font-sans text-white mt-2 sm:mt-4 min-h-[2rem] sm:min-h-[3rem]">
         {displayedText}
@@ -33,7 +33,7 @@ export default function Home() {
       <div className="flex gap-4 sm:gap-6 mt-6 sm:mt-8">
         {/* GitHub */}
         <a
-          href="https://github.com/rozee01"
+          href="https://github.com/todoyalee"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
@@ -51,7 +51,7 @@ export default function Home() {
         </a>
         {/* LinkedIn */}
         <a
-          href="https://www.linkedin.com/in/arij-thabet-193677257/"
+          href="https://www.linkedin.com/in/dali-belkouri/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"

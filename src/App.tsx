@@ -1,14 +1,14 @@
 import './App.css'
 import { useState ,useRef, useLayoutEffect, useEffect} from 'react';
-import Experience from './components/Experience'
-import Navbar from './components/Navbar'
-import Home from './components/Home'
-import { VortexBackground } from './components/VortexBackground'
-import Skills from './components/Skills'
-import Projects from './components/Projects'
-import Chatbot from './components/Chatbot'
-import Achievements from './components/Achievements'
-import Popup from './components/Popup';
+import Experience from './components/Experience.js'
+import Navbar from './components/Navbar.js'
+import Home from './components/Home.js'
+import { VortexBackground } from './components/VortexBackground.js'
+import Skills from './components/Skills.js'
+import Projects from './components/Projects.js'
+import Chatbot from './components/Chatbot.js'
+import Achievements from './components/Achievements.js'
+import Popup from './components/Popup.js';
 
 function App() {
   const [showPopup, setShowPopup] = useState(false);

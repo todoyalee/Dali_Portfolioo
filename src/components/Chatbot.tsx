@@ -53,7 +53,7 @@ const Chatbot = forwardRef<HTMLDivElement>((props, ref) => {
     {open ? (
       <div className="w-80 h-[500px] bg-white rounded-xl shadow-lg flex flex-col overflow-hidden border border-gray-200">
         <div className="bg-orange-500 text-black px-4 py-2 flex justify-between items-center">
-          <span className="font-semibold">Arij's Assistant</span>
+          <span className="font-semibold">Daly's Assistant</span>
           <button
             onClick={() => {
               setOpen(false);
